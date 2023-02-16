@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import ListPhones from './components/ListPhones';
+import Phone from './components/PhoneCard';
+import DetailsPage from './components/DetailsPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='navbar'>
+        <h1 >The Phone Cave</h1>
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ListPhones />} />
+          <Route path="/:id" element={<DetailsPage />} />
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
