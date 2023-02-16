@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "../App.css"
 import PhoneCard from './PhoneCard.js'
-// import axios from 'axios'
-import phonesData from './phones.json'
-import { Link } from 'react-router-dom'
+
 import axios from 'axios'
 import DetailsPage from './DetailsPage'
 
