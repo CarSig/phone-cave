@@ -36,8 +36,21 @@ const ListPhones = () => {
 
 
     useEffect(() => {
-        const details = phones.find(phone => phone.id == selectedPhone)
-        setPhoneDetails(details)
+        // const details = phones.find(phone => phone.id == selectedPhone)
+        // setPhoneDetails(details)
+        if (selectedPhone !== null) {
+            axios.get(`http://localhost:5005/api/phones/${selectedPhone}`)
+                .then((response) => {
+                    setPhoneDetails(response.data[0])
+                    setLoading(false)
+                }
+                )
+                .catch((err) => {
+                    console.log(err)
+                }
+                )
+        }
+
 
 
     }, [selectedPhone])
